@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      th:fragment="layout">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">도서 교환 프로젝트</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 1rem; line-height: 1.6; }
+        nav { display: flex; flex-wrap: wrap; gap: 1rem; padding: 1rem; background-color: #f0f0f0; }
+        nav a { text-decoration: none; color: #007bff; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        section { padding: 1rem; }
+        ul { padding-left: 1rem; }
+        li { margin-bottom: 0.5rem; }
+        @media (max-width: 600px) { nav { flex-direction: column; } }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a th:href="@{/}">홈</a>
+    <a th:href="@{/signup}"
+       th:if="${loginUser == null}">회원가입 요청</a>
+
+    <a th:href="@{/my-books}">내 책장</a>
+    <a th:href="@{/register-book}">도서 등록</a>
+    <a th:href="@{/user-books}">다른 회원 책장</a>
+    <a th:href="@{/all-books}">전체 도서 목록</a>
+    <a th:href="@{/exchange-requests}">교환 신청</a>
+    <a th:href="@{/notifications}">알림</a>
+
+    <a th:href="@{/login}"
+       th:if="${loginUser == null}">로그인</a>
+
+    <a th:href="@{/logout}"
+       th:if="${loginUser != null}">로그아웃</a>
+
+    <span th:if="${loginUser != null}">
+    <strong th:text="${loginUser}"></strong> 님 환영합니다!
+  </span>
+</nav>
+
+
+<section th:insert="~{::content}">[본문]</section>
+
+</body>
+</html>

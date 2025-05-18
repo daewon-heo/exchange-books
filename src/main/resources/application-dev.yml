@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/book_exchange
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  messages:
+    encoding: UTF-8
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # 개발 중에는 update, 운영 시에는 validate 또는 none
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .html
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type: TRACE  # 파라미터 바인딩 값까지 출력

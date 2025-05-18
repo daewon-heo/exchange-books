@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>교환 스레드</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 1rem; line-height: 1.6; }
+    nav { display: flex; flex-wrap: wrap; gap: 1rem; padding: 1rem; background-color: #f0f0f0; }
+    nav a { text-decoration: none; color: #007bff; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    section { padding: 1rem; }
+    .chat-box { border: 1px solid #ccc; padding: 1rem; max-width: 600px; margin-bottom: 1rem; }
+    .chat-message { margin-bottom: 0.5rem; }
+    .chat-input { display: flex; gap: 0.5rem; }
+    .chat-input input { flex: 1; padding: 0.5rem; }
+    .chat-input button { padding: 0.5rem 1rem; }
+    @media (max-width: 600px) { nav { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">홈</a>
+    <a href="signup.html">회원가입 요청</a>
+    <a href="login.html">로그인</a>
+    <a href="my-books.html">내 책장</a>
+    <a href="register-book.html">도서 등록</a>
+    <a href="user-books.html">다른 회원 책장</a>
+    <a href="all-books.html">전체 도서 목록</a>
+    <a href="exchange-requests.html">교환 신청</a>
+    <a href="notifications.html">알림</a>
+  </nav>
+  <section>
+    <h1>교환 스레드</h1>
+    <div class="chat-box">
+      <div class="chat-message"><strong>me:</strong> 이 책 관심 있으신가요?</div>
+      <div class="chat-message"><strong>user123:</strong> 네! 교환 원해요.</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" placeholder="메시지 입력">
+      <button>전송</button>
+    </div>
+  </section>
+</body>
+</html>

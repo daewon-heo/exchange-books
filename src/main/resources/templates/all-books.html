@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout}">
+<body>
+<section th:fragment="content">
+  <h1>전체 도서 목록</h1>
+  <ul>
+    <li th:each="book : ${books}">
+      <strong th:text="${book.title}"></strong> /
+      <span th:text="${book.author}"></span> /
+      <span th:text="${book.publisher}"></span> /
+      <span th:text="${book.isbn}"></span>
+    </li>
+  </ul>
+</section>
+</body>
+</html>

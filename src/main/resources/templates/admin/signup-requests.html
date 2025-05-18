@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout}">
+<body>
+<section th:fragment="content">
+    <h1>가입 요청 목록</h1>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>이메일</th>
+            <th>요청 상태</th>
+            <th>승인/거절</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="req : ${requests}">
+            <td th:text="${req.id}">1</td>
+            <td th:text="${req.email}">user@example.com</td>
+            <td th:text="${req.status}">PENDING</td>
+            <td>
+                <form th:action="@{/admin/signup-requests/{id}/approve(id=${req.id})}" method="post" style="display:inline">
+                    <button type="submit">승인</button>
+                </form>
+                <form th:action="@{/admin/signup-requests/{id}/reject(id=${req.id})}" method="post" style="display:inline">
+                    <button type="submit">거절</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>

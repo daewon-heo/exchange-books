@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout}">
+<body>
+<section th:fragment="content">
+  <h1>로그인</h1>
+
+  <p th:if="${error}" th:text="${error}" style="color:red;"></p>
+
+  <form th:action="@{/login}" method="post">
+    <label for="email">이메일</label>
+    <input type="email" id="email" name="email" required>
+    <button type="submit">로그인</button>
+  </form>
+</section>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>알림</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 1rem; line-height: 1.6; }
+    nav { display: flex; flex-wrap: wrap; gap: 1rem; padding: 1rem; background-color: #f0f0f0; }
+    nav a { text-decoration: none; color: #007bff; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    section { padding: 1rem; }
+    ul { padding-left: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    @media (max-width: 600px) { nav { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">홈</a>
+    <a href="signup.html">회원가입 요청</a>
+    <a href="login.html">로그인</a>
+    <a href="my-books.html">내 책장</a>
+    <a href="register-book.html">도서 등록</a>
+    <a href="user-books.html">다른 회원 책장</a>
+    <a href="all-books.html">전체 도서 목록</a>
+    <a href="exchange-requests.html">교환 신청</a>
+    <a href="notifications.html">알림</a>
+  </nav>
+  <section>
+    <h1>알림</h1>
+    <ul>
+      <li>[받음] user123님이 당신의 책에 교환 신청을 보냈습니다.</li>
+      <li>[성공] 교환이 완료되었습니다. 🎉</li>
+      <li>[거절] 교환이 수락되지 않았습니다.</li>
+    </ul>
+  </section>
+</body>
+</html>
